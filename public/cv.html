@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nevfel Deniz Sürmeli — CV</title>
+  <style>
+    :root { --brand: #059669; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #f3f4f6;
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 48px 56px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+    }
+    header {
+      border-bottom: 3px solid var(--brand); padding-bottom: 20px; margin-bottom: 28px;
+      display: flex; align-items: center; gap: 28px;
+    }
+    .photo {
+      width: 110px; height: 110px; border-radius: 50%; object-fit: cover;
+      border: 3px solid var(--brand); flex-shrink: 0;
+    }
+    .head-info { flex: 1; }
+    h1 { font-size: 30px; letter-spacing: .5px; }
+    .role { color: var(--brand); font-weight: 600; font-size: 16px; margin-top: 4px; }
+    .contact { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13.5px; color: var(--muted); }
+    .contact a { color: var(--muted); text-decoration: none; }
+    section { margin-bottom: 26px; }
+    h2 {
+      font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--brand); margin-bottom: 12px; border-bottom: 1px solid var(--line); padding-bottom: 6px;
+    }
+    p { font-size: 14px; }
+    .item { margin-bottom: 14px; }
+    .item .top { display: flex; justify-content: space-between; flex-wrap: wrap; }
+    .item .title { font-weight: 600; font-size: 14.5px; }
+    .item .date { color: var(--muted); font-size: 13px; }
+    .item .sub { color: var(--muted); font-size: 13.5px; }
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; font-size: 14px; }
+    .skills .cat { font-weight: 600; }
+    .tags { color: var(--muted); }
+    .print-hint {
+      max-width: 820px; margin: 0 auto 16px; text-align: center; font-size: 13px; color: #6b7280;
+    }
+    .print-hint button {
+      background: var(--brand); color: #fff; border: 0; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px;
+    }
+    .page + .page { margin-top: 28px; }
+    .lang-label {
+      max-width: 820px; margin: 28px auto 8px; font-size: 12px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--muted); text-align: center;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; padding: 24px 32px; max-width: 100%; }
+      .print-hint { display: none; }
+      .page.en { page-break-before: always; }
+      .lang-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-hint">
+    PDF olarak kaydetmek için
+    <button onclick="window.print()">Yazdır / PDF Kaydet</button>
+    butonuna basın (hedef: &ldquo;PDF olarak kaydet&rdquo;).
+  </div>
+
+  <div class="page">
+    <header>
+      <img class="photo" src="profile.png" alt="Nevfel Deniz Sürmeli" />
+      <div class="head-info">
+        <h1>Nevfel Deniz Sürmeli</h1>
+        <div class="role">Yazılım Mühendisi (Öğrenci)</div>
+        <div class="contact">
+          <a href="mailto:nevfeldenizz@gmail.com">nevfeldenizz@gmail.com</a>
+          <a href="mailto:20231125@std.neu.edu.tr">20231125@std.neu.edu.tr</a>
+          <a href="https://www.linkedin.com/in/nevfel-deniz-s%C3%BCrmeli-9383601b9/">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Hakkımda</h2>
+      <p>
+        Yakın Doğu Üniversitesi'nde yazılım mühendisliği eğitimi alıyorum. Backend, Frontend ve Full Stack
+        geliştirmeye, ayrıca yapay zeka uygulamalarına ilgi duyuyorum. Bir problemi derinlemesine anlamayı,
+        ardından temiz, sürdürülebilir ve ölçeklenebilir çözümler üretmeyi önemsiyorum. Sürekli öğrenmeye
+        açık, takım çalışmasına yatkın ve detaylara önem veren bir geliştiriciyim.
+      </p>
+    </section>
+
+    <section>
+      <h2>Eğitim</h2>
+      <div class="item">
+        <div class="top">
+          <span class="title">Yakın Doğu Üniversitesi</span>
+          <span class="date">2023 — Günümüz</span>
+        </div>
+        <div class="sub">Yazılım / Bilgisayar Mühendisliği</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Yetenekler</h2>
+      <div class="skills">
+        <div><span class="cat">Diller:</span> <span class="tags">Python, C++, Java</span></div>
+        <div><span class="cat">Framework / Kütüphaneler:</span> <span class="tags">React, Next.js, Node.js, Spring Boot</span></div>
+        <div><span class="cat">Araçlar & Veritabanları:</span> <span class="tags">Git, Docker, PostgreSQL, MongoDB, Linux</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dil</h2>
+      <p>Türkçe (Ana dil) &nbsp;•&nbsp; İngilizce</p>
+    </section>
+  </div>
+
+  <div class="lang-label">English Version</div>
+
+  <div class="page en">
+    <header>
+      <img class="photo" src="profile.png" alt="Nevfel Deniz Sürmeli" />
+      <div class="head-info">
+        <h1>Nevfel Deniz Sürmeli</h1>
+        <div class="role">Software Engineer (Student)</div>
+        <div class="contact">
+          <a href="mailto:nevfeldenizz@gmail.com">nevfeldenizz@gmail.com</a>
+          <a href="mailto:20231125@std.neu.edu.tr">20231125@std.neu.edu.tr</a>
+          <a href="https://www.linkedin.com/in/nevfel-deniz-s%C3%BCrmeli-9383601b9/">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        I am studying software engineering at Near East University. I am passionate about backend,
+        frontend and full stack development, as well as artificial intelligence applications. I value
+        understanding a problem in depth and then building clean, maintainable and scalable solutions.
+        I am eager to keep learning, enjoy working in teams and pay close attention to detail.
+      </p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="top">
+          <span class="title">Near East University</span>
+          <span class="date">2023 — Present</span>
+        </div>
+        <div class="sub">Software / Computer Engineering</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><span class="cat">Languages:</span> <span class="tags">Python, C++, Java</span></div>
+        <div><span class="cat">Frameworks / Libraries:</span> <span class="tags">React, Next.js, Node.js, Spring Boot</span></div>
+        <div><span class="cat">Tools &amp; Databases:</span> <span class="tags">Git, Docker, PostgreSQL, MongoDB, Linux</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>Turkish (Native) &nbsp;•&nbsp; English</p>
+    </section>
+  </div>
+</body>
+</html>
