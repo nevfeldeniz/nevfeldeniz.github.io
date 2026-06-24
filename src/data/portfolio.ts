@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline:
     "Temiz kod yazmaya, ölçeklenebilir sistemler tasarlamaya ve problemi çözmeye tutkulu bir geliştiriciyim.",
   about:
-    "Yakın Doğu Üniversitesi'nde yazılım mühendisliği eğitimi alıyorum. Backend, Frontend ve Full Stack geliştirmeye, ayrıca yapay zeka uygulamalarına ilgi duyuyorum. Bir problemi derinlemesine anlamayı, ardından temiz, sürdürülebilir ve ölçeklenebilir çözümler üretmeyi önemsiyorum. Sürekli öğrenmeye açık, takım çalışmasına yatkın ve detaylara önem veren bir geliştiriciyim.",
+    "Yakın Doğu Üniversitesi'nde yazılım mühendisliği (İngilizce) eğitimi alıyorum. Backend, Frontend ve Full Stack geliştirmeye, ayrıca yapay zeka uygulamalarına ilgi duyuyorum. Bir problemi derinlemesine anlamayı, ardından temiz, sürdürülebilir ve ölçeklenebilir çözümler üretmeyi önemsiyorum. Sürekli öğrenmeye açık, takım çalışmasına yatkın ve detaylara önem veren bir geliştiriciyim.",
   email: "nevfeldenizz@gmail.com",
   schoolEmail: "20231125@std.neu.edu.tr",
   github: "https://github.com/nevfeldeniz",
