@@ -25,15 +25,15 @@ export const timeline = [
   },
   {
     year: "2026 - Günümüz",
-    title: "Yakın Doğu Üniversitesi — Devam Ediyor",
-    description: "Yazılım mühendisliği eğitimime devam ediyorum; kendimi geliştirmeye ve yeni teknolojiler öğrenmeye odaklanıyorum.",
+    title: "Yakın Doğu Üniversitesi — 2. Sınıf",
+    description: "Yazılım mühendisliği eğitimime 2. sınıfta devam ediyorum; kendimi geliştirmeye ve yeni teknolojiler öğrenmeye odaklanıyorum.",
   },
 ];
 
 export const skills: Record<string, string[]> = {
   "Diller": ["Python", "C++"],
   "Framework / Kütüphaneler": ["React", "Next.js", "Node.js", "Spring Boot"],
-  "Araçlar & Veritabanları": ["Git", "Docker", "PostgreSQL", "MongoDB", "Linux"],
+  "Araçlar & Veritabanları": ["Git", "PostgreSQL"],
 };
 
 export const projects = [
