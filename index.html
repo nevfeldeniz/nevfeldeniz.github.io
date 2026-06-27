@@ -3,333 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nevfel Deniz Sürmeli | Yazılım Mühendisi</title>
-  <meta name="description" content="Temiz kod, ölçeklenebilir sistemler ve problem çözme odaklı yazılım mühendisi portföyü." />
+  <title>Nevfel Deniz Sürmeli | Software Engineer</title>
+  <meta name="description" content="Software Engineering student at Near East University. Python, C++, web development." />
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
 
-  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              400: '#34d399',
-              500: '#10b981',
-              600: '#059669',
-            },
+            accent: { DEFAULT: '#cbd5e1', muted: '#64748b' },
           },
           fontFamily: {
             sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
           },
         },
       },
     };
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    body { background-color: #09090b; color: #f4f4f5; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
-    .reveal.show { opacity: 1; transform: translateY(0); }
-    ::selection { background: #10b981; color: #09090b; }
-
-    /* Scroll progress bar */
-    #progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; z-index: 60;
-      background: linear-gradient(90deg, #34d399, #10b981); transition: width .1s linear; }
-
-    /* Animated grid + glow background for hero */
-    .hero-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    .hero-bg .grid {
-      position: absolute; inset: -2px;
-      background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 75%);
-    }
-    .blob { position: absolute; border-radius: 9999px; filter: blur(70px); opacity: .5; }
-    .blob.a { width: 420px; height: 420px; background: rgba(16,185,129,.30); top: -120px; left: -80px; animation: float1 9s ease-in-out infinite; }
-    .blob.b { width: 360px; height: 360px; background: rgba(52,211,153,.18); bottom: -120px; right: -60px; animation: float2 11s ease-in-out infinite; }
-    @keyframes float1 { 0%,100%{ transform: translate(0,0); } 50%{ transform: translate(30px,40px); } }
-    @keyframes float2 { 0%,100%{ transform: translate(0,0); } 50%{ transform: translate(-30px,-30px); } }
-
-    /* Card hover lift + glow */
-    .card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px -12px rgba(16,185,129,.25); border-color: rgba(16,185,129,.5); }
-
-    /* Eyebrow label */
-    .eyebrow { color: #34d399; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
-
-    /* Available badge pulse dot */
-    .pulse { position: relative; }
-    .pulse::before { content:''; position:absolute; inset:0; border-radius:9999px; background:#34d399; opacity:.6; animation: ping 1.6s cubic-bezier(0,0,.2,1) infinite; }
-    @keyframes ping { 75%,100%{ transform: scale(2.2); opacity: 0; } }
-
-    /* Scroll-down chevron */
-    .scroll-cue { animation: bob 1.8s ease-in-out infinite; }
-    @keyframes bob { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(8px); } }
-
-    /* Nav link underline */
-    .navlink { position: relative; }
-    .navlink::after { content:''; position:absolute; left:0; bottom:-4px; height:2px; width:0; background:#10b981; transition: width .25s ease; }
-    .navlink:hover::after { width:100%; }
-
-    html { scroll-padding-top: 80px; }
-
-    /* Display font for headings */
-    h1, h2, .display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
-
-    /* Aurora / mesh gradient background (fixed, behind content) */
-    #aurora { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-    #aurora::before, #aurora::after {
-      content: ''; position: absolute; width: 70vw; height: 70vw; border-radius: 9999px; filter: blur(90px);
-    }
-    #aurora::before {
-      background: radial-gradient(circle, rgba(16,185,129,.22), transparent 60%);
-      top: -20vw; left: -10vw; animation: aurora1 18s ease-in-out infinite;
-    }
-    #aurora::after {
-      background: radial-gradient(circle, rgba(45,212,191,.16), transparent 60%);
-      bottom: -25vw; right: -10vw; animation: aurora2 22s ease-in-out infinite;
-    }
-    @keyframes aurora1 { 0%,100%{ transform: translate(0,0) scale(1); } 50%{ transform: translate(12vw,8vw) scale(1.15); } }
-    @keyframes aurora2 { 0%,100%{ transform: translate(0,0) scale(1); } 50%{ transform: translate(-10vw,-6vw) scale(1.1); } }
-
-    /* Spotlight that follows the cursor */
-    #spotlight {
-      position: fixed; inset: 0; z-index: 30; pointer-events: none; mix-blend-mode: screen;
-      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 20%), rgba(16,185,129,.10), transparent 60%);
-      transition: background .08s ease;
-    }
-
-    /* Keep content above background layers */
-    header, main, footer { position: relative; z-index: 10; }
-
-    /* Glass + 3D tilt cards */
-    .card { transform-style: preserve-3d; will-change: transform; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-
-    /* Typewriter caret */
-    #typed-caret { display: inline-block; width: 2px; height: 1.1em; background: #34d399; margin-left: 4px; vertical-align: -2px; animation: blink 1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
+    body { background: #0c0f14; color: #e2e8f0; }
+    ::selection { background: #334155; color: #f8fafc; }
+    html { scroll-padding-top: 72px; }
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    .section-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #64748b; font-weight: 500; }
+    .card { border: 1px solid #1e293b; background: #111827; transition: border-color .2s ease; }
+    .card:hover { border-color: #334155; }
+    .navlink { color: #94a3b8; transition: color .2s; }
+    .navlink:hover { color: #f1f5f9; }
+    .btn-primary { background: #f1f5f9; color: #0f172a; }
+    .btn-primary:hover { background: #e2e8f0; }
+    .btn-secondary { border: 1px solid #334155; color: #cbd5e1; }
+    .btn-secondary:hover { border-color: #64748b; color: #f1f5f9; }
   </style>
 </head>
 <body class="font-sans antialiased">
 
-  <div id="aurora"></div>
-  <div id="spotlight"></div>
-  <div id="progress"></div>
-
-  <!-- ===== NAVBAR ===== -->
-  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-zinc-950/70 border-b border-zinc-800/60">
-    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#hero" class="font-bold text-lg tracking-tight">NDS<span class="text-brand-500">.</span></a>
-      <ul class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
-        <li><a href="#about" class="navlink hover:text-brand-400 transition">Hakkımda</a></li>
-        <li><a href="#timeline" class="navlink hover:text-brand-400 transition">Yolculuk</a></li>
-        <li><a href="#skills" class="navlink hover:text-brand-400 transition">Yetenekler</a></li>
-        <li><a href="#projects" class="navlink hover:text-brand-400 transition">Projeler</a></li>
-        <li><a href="#contact" class="navlink hover:text-brand-400 transition">İletişim</a></li>
+  <!-- Navbar -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#0c0f14]/95 border-b border-slate-800">
+    <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="#hero" class="text-sm font-semibold text-slate-100 tracking-wide">N. D. Sürmeli</a>
+      <ul class="hidden md:flex items-center gap-7 text-sm">
+        <li><a href="#about" class="navlink">Hakkımda</a></li>
+        <li><a href="#timeline" class="navlink">Eğitim</a></li>
+        <li><a href="#skills" class="navlink">Yetenekler</a></li>
+        <li><a href="#projects" class="navlink">Projeler</a></li>
+        <li><a href="#contact" class="navlink">İletişim</a></li>
       </ul>
-      <a href="#contact" class="text-sm px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-zinc-950 font-medium transition">İletişime Geç</a>
+      <a href="#contact" class="text-xs px-3 py-1.5 rounded btn-primary font-medium">İletişim</a>
     </nav>
   </header>
 
-  <main>
-    <!-- ===== HERO ===== -->
-    <section id="hero" class="relative min-h-screen flex items-center px-6 lg:px-12 pt-20 overflow-hidden">
-      <div class="hero-bg">
-        <div class="grid"></div>
-        <div class="blob a"></div>
-        <div class="blob b"></div>
-      </div>
-      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full relative">
+  <main class="max-w-4xl mx-auto px-6">
+
+    <!-- Hero -->
+    <section id="hero" class="pt-28 pb-20 border-b border-slate-800">
+      <div class="grid md:grid-cols-[1fr_auto] gap-10 items-start">
         <div class="reveal">
-          <div class="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-sm text-brand-400">
-            <span class="pulse w-2 h-2 rounded-full bg-brand-400 inline-block"></span>
-            Yeni fırsatlara ve iş birliklerine açık
-          </div>
-          <p class="eyebrow mb-4">Merhaba, ben</p>
-          <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-5 text-white">
-            Nevfel Deniz<br class="hidden sm:block" /> Sürmeli
+          <p class="section-label mb-4">Portfolio</p>
+          <h1 class="text-3xl md:text-4xl font-semibold text-white leading-tight mb-2">
+            Nevfel Deniz Sürmeli
           </h1>
-          <div class="flex items-center gap-3 mb-6">
-            <span class="h-px w-10 bg-brand-500"></span>
-            <h2 class="text-lg md:text-xl text-zinc-200 font-medium display">Software Engineer</h2>
-          </div>
-          <p class="text-zinc-300 leading-relaxed mb-6 max-w-lg">
-            Temiz kod yazmaya, ölçeklenebilir sistemler tasarlamaya ve problemi çözmeye tutkulu bir geliştiriciyim.
+          <p class="text-lg text-slate-400 mb-1">Software Engineer</p>
+          <p class="text-sm text-slate-500 mb-6">Near East University · Software Engineering (English)</p>
+          <p class="text-slate-300 leading-relaxed max-w-xl mb-8 text-[15px]">
+            Yazılım mühendisliği öğrencisiyim. Temiz kod, sistematik problem çözme ve
+            sürdürülebilir yazılım geliştirmeye odaklanıyorum.
           </p>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="px-3 py-1 rounded-full bg-zinc-800/70 border border-zinc-700 text-xs text-zinc-300">Python</span>
-            <span class="px-3 py-1 rounded-full bg-zinc-800/70 border border-zinc-700 text-xs text-zinc-300">C++</span>
-            <span class="px-3 py-1 rounded-full bg-zinc-800/70 border border-zinc-700 text-xs text-zinc-300">Yakın Doğu Üniversitesi</span>
-          </div>
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="#projects" class="px-6 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-zinc-950 font-medium transition">Projelerimi Gör</a>
-            <a href="public/cv.html" target="_blank" rel="noreferrer" class="px-6 py-3 rounded-lg border border-zinc-700 hover:border-brand-500 flex items-center gap-2 transition">
-              <i data-lucide="download" class="w-4 h-4"></i> CV İndir
+          <div class="flex flex-wrap gap-3">
+            <a href="public/cv.html" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded text-sm font-medium btn-primary">
+              <i data-lucide="file-text" class="w-4 h-4"></i> CV / Resume
             </a>
-            <a href="https://github.com/nevfeldeniz" target="_blank" rel="noreferrer" class="p-3 rounded-lg border border-zinc-700 hover:text-brand-400 hover:border-brand-500 transition" aria-label="GitHub">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+            <a href="https://github.com/nevfeldeniz" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded text-sm btn-secondary">
+              GitHub
             </a>
-            <a href="https://www.linkedin.com/in/nevfel-deniz-s%C3%BCrmeli-9383601b9/" target="_blank" rel="noreferrer" class="p-3 rounded-lg border border-zinc-700 hover:text-brand-400 hover:border-brand-500 transition" aria-label="LinkedIn">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            <a href="https://www.linkedin.com/in/nevfel-deniz-s%C3%BCrmeli-9383601b9/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded text-sm btn-secondary">
+              LinkedIn
             </a>
           </div>
         </div>
-        <div class="reveal flex justify-center lg:justify-end">
-          <div class="relative">
-            <div class="absolute -inset-3 rounded-full bg-brand-500/20 blur-2xl"></div>
-            <img src="public/profile.png" alt="Nevfel Deniz Sürmeli"
-                 onerror="this.onerror=null;this.src='https://placehold.co/400x400/18181b/10b981?text=NDS';"
-                 class="relative w-44 h-44 md:w-56 md:h-56 rounded-full object-cover ring-4 ring-brand-500/30" />
-          </div>
+        <div class="reveal flex justify-center md:justify-end">
+          <img src="public/profile.png" alt="Nevfel Deniz Sürmeli"
+               onerror="this.onerror=null;this.src='https://placehold.co/200x200/111827/64748b?text=NDS';"
+               class="w-36 h-36 md:w-40 md:h-40 rounded object-cover border border-slate-700" />
         </div>
       </div>
-      <a href="#about" aria-label="Aşağı kaydır" class="scroll-cue absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-500 hover:text-brand-400 transition">
-        <i data-lucide="chevron-down" class="w-7 h-7"></i>
-      </a>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="py-24 px-6 bg-zinc-900/40 border-y border-zinc-800/60">
-      <div class="max-w-3xl mx-auto text-center reveal">
-        <p class="eyebrow mb-3">Kimim</p>
-        <h2 class="text-3xl font-bold mb-6">Hakkımda</h2>
-        <p class="text-zinc-300 leading-relaxed text-lg">
-          Yakın Doğu Üniversitesi'nde yazılım mühendisliği (İngilizce) eğitimi alıyorum. Backend, Frontend ve Full Stack
-          geliştirmeye, ayrıca yapay zeka uygulamalarına ilgi duyuyorum. Bir problemi derinlemesine anlamayı,
-          ardından temiz, sürdürülebilir ve ölçeklenebilir çözümler üretmeyi önemsiyorum. Sürekli öğrenmeye
-          açık, takım çalışmasına yatkın ve detaylara önem veren bir geliştiriciyim.
+    <!-- About -->
+    <section id="about" class="py-16 border-b border-slate-800">
+      <div class="reveal">
+        <p class="section-label mb-2">About</p>
+        <h2 class="text-xl font-semibold text-white mb-4">Hakkımda</h2>
+        <p class="text-slate-300 leading-relaxed text-[15px] max-w-2xl">
+          Yakın Doğu Üniversitesi'nde yazılım mühendisliği (İngilizce) bölümünde 2. sınıf öğrencisiyim.
+          Backend, frontend ve full stack geliştirme alanlarına ilgi duyuyorum. Problemleri analiz ederek
+          net, okunabilir ve sürdürülebilir çözümler üretmeyi hedefliyorum. Takım çalışmasına yatkınım
+          ve sürekli öğrenmeye açığım.
         </p>
       </div>
     </section>
 
-    <!-- ===== TIMELINE ===== -->
-    <section id="timeline" class="py-24 px-6">
-      <div class="reveal text-center mb-16">
-        <p class="eyebrow mb-3">Yolculuğum</p>
-        <h2 class="text-3xl font-bold">Kariyer ve Eğitim Yolculuğu</h2>
+    <!-- Timeline -->
+    <section id="timeline" class="py-16 border-b border-slate-800">
+      <div class="reveal mb-10">
+        <p class="section-label mb-2">Education</p>
+        <h2 class="text-xl font-semibold text-white">Eğitim ve Gelişim</h2>
       </div>
-      <div id="timeline-list" class="max-w-2xl mx-auto relative">
-        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-brand-500/30 -translate-x-1/2"></div>
-      </div>
+      <div id="timeline-list" class="space-y-0 border-l border-slate-700 ml-1"></div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
-    <section id="skills" class="py-24 px-6 bg-zinc-900/40 border-y border-zinc-800/60">
-      <div class="reveal text-center mb-16">
-        <p class="eyebrow mb-3">Neler Yapabilirim</p>
-        <h2 class="text-3xl font-bold">Yetenekler</h2>
+    <!-- Skills -->
+    <section id="skills" class="py-16 border-b border-slate-800">
+      <div class="reveal mb-10">
+        <p class="section-label mb-2">Skills</p>
+        <h2 class="text-xl font-semibold text-white">Yetenekler</h2>
       </div>
-      <div id="skills-grid" class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8"></div>
+      <div id="skills-grid" class="grid md:grid-cols-3 gap-5"></div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="py-24 px-6">
-      <div class="reveal text-center mb-16">
-        <p class="eyebrow mb-3">Çalışmalarım</p>
-        <h2 class="text-3xl font-bold">Projeler</h2>
+    <!-- Projects -->
+    <section id="projects" class="py-16 border-b border-slate-800">
+      <div class="reveal mb-10">
+        <p class="section-label mb-2">Projects</p>
+        <h2 class="text-xl font-semibold text-white">Projeler</h2>
       </div>
-      <div class="card reveal max-w-2xl mx-auto text-center bg-zinc-800/40 border border-dashed border-zinc-700 rounded-2xl p-12">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-500/10 text-brand-400 mb-6">
-          <i data-lucide="rocket" class="w-8 h-8"></i>
-        </div>
-        <h3 class="text-2xl font-semibold mb-3">Yakında eklenecek</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Şu anda yeni projeler üzerinde çalışıyorum. Geliştirdiğim projeleri yakında burada paylaşacağım. Takipte kalın!
+      <div class="reveal card rounded-lg p-8 max-w-xl">
+        <p class="text-slate-400 text-[15px] leading-relaxed">
+          Projelerim şu anda geliştirme aşamasında. Tamamlandıkça bu bölüm güncellenecektir.
         </p>
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
-    <footer id="contact" class="py-24 px-6 bg-zinc-900/60 border-t border-zinc-800">
-      <div class="max-w-2xl mx-auto text-center reveal">
-        <p class="eyebrow mb-3">İletişim</p>
-        <h2 class="text-3xl font-bold mb-4">Birlikte çalışalım!</h2>
-        <p class="text-zinc-400 mb-8">Bir fikriniz veya projeniz mi var? Bana ulaşmaktan çekinmeyin.</p>
-        <div class="flex flex-wrap justify-center gap-4 mb-10">
-          <a href="mailto:nevfeldenizz@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-brand-500 hover:bg-brand-600 text-zinc-950 font-medium transition">
-            <i data-lucide="mail" class="w-4 h-4"></i> nevfeldenizz@gmail.com
-          </a>
-          <a href="mailto:20231125@std.neu.edu.tr" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-zinc-700 hover:border-brand-500 transition">
-            <i data-lucide="mail" class="w-4 h-4"></i> 20231125@std.neu.edu.tr
-          </a>
-          <a href="tel:+905488793011" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-zinc-700 hover:border-brand-500 transition">
-            <i data-lucide="phone" class="w-4 h-4"></i> 0548 879 30 11
-          </a>
-        </div>
-        <div class="flex justify-center gap-6 mb-10">
-          <a href="https://github.com/nevfeldeniz" target="_blank" rel="noreferrer" class="hover:text-brand-400 transition" aria-label="GitHub"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
-          <a href="https://www.linkedin.com/in/nevfel-deniz-s%C3%BCrmeli-9383601b9/" target="_blank" rel="noreferrer" class="hover:text-brand-400 transition" aria-label="LinkedIn"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a href="mailto:nevfeldenizz@gmail.com" class="hover:text-brand-400 transition" aria-label="E-posta"><i data-lucide="mail" class="w-6 h-6"></i></a>
-        </div>
-        <p class="text-zinc-600 text-sm" id="copyright"></p>
+    <!-- Contact -->
+    <footer id="contact" class="py-16">
+      <div class="reveal">
+        <p class="section-label mb-2">Contact</p>
+        <h2 class="text-xl font-semibold text-white mb-2">İletişim</h2>
+        <p class="text-slate-400 text-sm mb-8 max-w-md">
+          Staj, proje veya iş birliği için aşağıdaki kanallardan ulaşabilirsiniz.
+        </p>
+        <ul class="space-y-3 text-sm mb-10">
+          <li>
+            <a href="mailto:nevfeldenizz@gmail.com" class="text-slate-300 hover:text-white transition">nevfeldenizz@gmail.com</a>
+          </li>
+          <li>
+            <a href="mailto:20231125@std.neu.edu.tr" class="text-slate-300 hover:text-white transition">20231125@std.neu.edu.tr</a>
+          </li>
+          <li>
+            <a href="tel:+905488793011" class="text-slate-300 hover:text-white transition">+90 548 879 30 11</a>
+          </li>
+          <li>
+            <a href="https://github.com/nevfeldeniz" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-white transition">github.com/nevfeldeniz</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/nevfel-deniz-s%C3%BCrmeli-9383601b9/" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-white transition">LinkedIn Profile</a>
+          </li>
+        </ul>
+        <p class="text-slate-600 text-xs" id="copyright"></p>
       </div>
     </footer>
   </main>
 
-  <!-- ===== DATA + RENDER SCRIPT ===== -->
   <script>
-    // --- İçerik verisi (buradan kolayca düzenleyebilirsiniz) ---
     const timeline = [
-      { year: "2023", title: "Yakın Doğu Üniversitesi", description: "Yazılım/Bilgisayar Mühendisliği eğitimime başladım." },
-      { year: "2024", title: "İlk Programlama Dili: Python", description: "Python ile temel programlama, algoritmalar ve veri yapıları üzerine çalışmalar." },
-      { year: "2026 - Günümüz", title: "Yakın Doğu Üniversitesi — 2. Sınıf", description: "Yazılım mühendisliği eğitimime 2. sınıfta devam ediyorum; kendimi geliştirmeye ve yeni teknolojiler öğrenmeye odaklanıyorum." },
+      { year: "2023", title: "Yakın Doğu Üniversitesi", description: "Software Engineering (English) programına başladım." },
+      { year: "2024", title: "Python", description: "Temel programlama, algoritmalar ve veri yapıları." },
+      { year: "2026 — Present", title: "2. Sınıf", description: "Yazılım mühendisliği eğitimime devam ediyorum." },
     ];
 
     const skills = {
-      "Diller": ["Python", "C++"],
-      "Framework / Kütüphaneler": ["React", "Next.js", "Node.js", "Spring Boot"],
-      "Araçlar & Veritabanları": ["Git", "PostgreSQL"],
+      "Languages": ["Python", "C++"],
+      "Frameworks": ["React", "Next.js", "Node.js", "Spring Boot"],
+      "Tools": ["Git", "PostgreSQL"],
     };
 
-    // --- Timeline render ---
     const tl = document.getElementById("timeline-list");
-    timeline.forEach((item, i) => {
-      const right = i % 2 !== 0;
+    timeline.forEach((item) => {
       const el = document.createElement("div");
-      el.className = `reveal relative flex mb-12 ${right ? "md:flex-row-reverse" : "md:flex-row"}`;
+      el.className = "reveal relative pl-8 pb-10 last:pb-0";
       el.innerHTML = `
-        <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-brand-500 rounded-full -translate-x-1/2 ring-4 ring-zinc-950"></div>
-        <div class="ml-12 md:ml-0 md:w-1/2 ${right ? "md:pl-12" : "md:pr-12 md:text-right"}">
-          <span class="text-brand-400 font-mono text-sm">${item.year}</span>
-          <h3 class="text-xl font-semibold mt-1">${item.title}</h3>
-          <p class="text-zinc-400 mt-2">${item.description}</p>
-        </div>`;
+        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-slate-500 -translate-x-[3px]"></span>
+        <p class="text-xs text-slate-500 font-medium mb-1">${item.year}</p>
+        <h3 class="text-base font-medium text-slate-100">${item.title}</h3>
+        <p class="text-sm text-slate-400 mt-1">${item.description}</p>`;
       tl.appendChild(el);
     });
 
-    // --- Skills render ---
     const sg = document.getElementById("skills-grid");
     Object.entries(skills).forEach(([cat, items]) => {
       const el = document.createElement("div");
-      el.className = "card reveal bg-zinc-800/50 border border-zinc-700 rounded-xl p-6";
+      el.className = "card reveal rounded-lg p-5";
       el.innerHTML = `
-        <h3 class="text-lg font-semibold mb-4 text-brand-400">${cat}</h3>
-        <div class="flex flex-wrap gap-2">
-          ${items.map(s => `<span class="px-3 py-1 bg-zinc-700/60 rounded-full text-sm">${s}</span>`).join("")}
-        </div>`;
+        <h3 class="text-xs section-label mb-3">${cat}</h3>
+        <ul class="space-y-1.5">
+          ${items.map(s => `<li class="text-sm text-slate-300">${s}</li>`).join("")}
+        </ul>`;
       sg.appendChild(el);
     });
 
-    // --- Copyright year ---
-    document.getElementById("copyright").textContent = `© ${new Date().getFullYear()} Nevfel Deniz Sürmeli`;
+    document.getElementById("copyright").textContent =
+      `© ${new Date().getFullYear()} Nevfel Deniz Sürmeli`;
 
-    // --- Icons ---
     lucide.createIcons();
 
-    // --- Scroll reveal animations ---
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -337,40 +222,8 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-    // --- Scroll progress bar ---
-    const progress = document.getElementById("progress");
-    const updateProgress = () => {
-      const h = document.documentElement;
-      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-      progress.style.width = (scrolled * 100) + "%";
-    };
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    updateProgress();
-
-    // --- Cursor spotlight ---
-    const spot = document.getElementById("spotlight");
-    window.addEventListener("pointermove", (e) => {
-      spot.style.setProperty("--mx", e.clientX + "px");
-      spot.style.setProperty("--my", e.clientY + "px");
-    }, { passive: true });
-
-    // --- 3D tilt on cards ---
-    document.querySelectorAll(".card").forEach(card => {
-      card.addEventListener("pointermove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const px = (e.clientX - rect.left) / rect.width - 0.5;
-        const py = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transition = "transform .05s linear";
-        card.style.transform = `perspective(800px) rotateX(${(-py * 7).toFixed(2)}deg) rotateY(${(px * 7).toFixed(2)}deg) translateY(-6px)`;
-      });
-      card.addEventListener("pointerleave", () => {
-        card.style.transition = "transform .4s ease";
-        card.style.transform = "";
-      });
-    });
   </script>
 </body>
 </html>
