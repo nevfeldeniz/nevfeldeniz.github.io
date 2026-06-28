@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
@@ -18,7 +18,14 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="bg-zinc-800/40 border border-zinc-700 rounded-2xl p-6 flex flex-col"
           >
-            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+            <div className="flex items-center gap-2 mb-2 flex-wrap">
+              <h3 className="text-xl font-semibold">{project.title}</h3>
+              {"status" in project && project.status && (
+                <span className="text-xs px-2 py-0.5 rounded border border-amber-800/60 bg-amber-950/40 text-amber-200/90">
+                  {project.status}
+                </span>
+              )}
+            </div>
             <p className="text-zinc-400 leading-relaxed text-sm mb-4 flex-1">
               {project.description}
             </p>
@@ -41,15 +48,6 @@ export default function Projects() {
               >
                 <ExternalLink className="w-4 h-4" />
                 Canlı Site
-              </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 transition"
-              >
-                <Github className="w-4 h-4" />
-                GitHub
               </a>
             </div>
           </motion.article>
