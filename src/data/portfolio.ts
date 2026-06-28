@@ -40,24 +40,19 @@ export const skills: Record<string, string[]> = {
 
 export const projects = [
   {
-    title: "Proje 1",
-    description: "Sorun: X problemi vardı. Çözüm: ölçeklenebilir bir Y sistemi tasarlandı.",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    github: "#",
-    demo: "#",
+    title: "Old Home Guest House",
+    description:
+      "Lefkoşa'daki butik otel için modern, responsive tek sayfalık web sitesi. Oda tanıtımları, galeri, imkanlar ve iletişim bölümleri.",
+    tags: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/nevfeldeniz/Oldhome",
+    demo: "https://nevfeldeniz.github.io/Oldhome/",
   },
   {
-    title: "Proje 2",
-    description: "Sorun: yavaş süreç. Çözüm: Y ile performans 2 kat artırıldı.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Proje 3",
-    description: "Sorun: manuel iş yükü. Çözüm: Y ile süreç otomatikleştirildi.",
-    tags: ["Python", "FastAPI", "Docker"],
-    github: "#",
-    demo: "#",
+    title: "Kişisel Portföy Sitesi",
+    description:
+      "Yazılım mühendisliği portföyüm; hakkımda, yetenekler, projeler, CV indirme ve iletişim bölümlerini içeren statik web sitesi.",
+    tags: ["HTML", "Tailwind CSS", "JavaScript"],
+    github: "https://github.com/nevfeldeniz/nevfeldeniz.github.io",
+    demo: "https://nevfeldeniz.github.io/",
   },
 ];
