@@ -41,10 +41,10 @@ export const skills: Record<string, string[]> = {
 export const projects = [
   {
     title: "Old Home Guest House",
+    status: "Geliştiriliyor",
     description:
-      "Lefkoşa'daki butik otel için modern, responsive tek sayfalık web sitesi. Oda tanıtımları, galeri, imkanlar ve iletişim bölümleri.",
+      "Lefkoşa'daki butik otel için modern, responsive tek sayfalık web sitesi. Oda tanıtımları, galeri, imkanlar ve iletişim bölümleri. Proje hâlâ aktif olarak geliştirilmektedir.",
     tags: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/nevfeldeniz/Oldhome",
     demo: "https://nevfeldeniz.github.io/Oldhome/",
   },
   {
@@ -52,7 +52,6 @@ export const projects = [
     description:
       "Yazılım mühendisliği portföyüm; hakkımda, yetenekler, projeler, CV indirme ve iletişim bölümlerini içeren statik web sitesi.",
     tags: ["HTML", "Tailwind CSS", "JavaScript"],
-    github: "https://github.com/nevfeldeniz/nevfeldeniz.github.io",
     demo: "https://nevfeldeniz.github.io/",
   },
 ];
