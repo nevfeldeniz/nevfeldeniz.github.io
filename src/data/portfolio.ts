@@ -64,15 +64,12 @@ export const projects: PortfolioProject[] = [
     description:
       "Butik otel operasyonları için Windows masaüstü uygulaması (Electron/EXE) ve tarayıcı tabanlı yönetim paneli; ikisi de merkezi NestJS API ve PostgreSQL üzerinden çalışır. Rezervasyon, oda yönetimi, ödeme takibi, finansal raporlar ve rol tabanlı yetkilendirme.",
     tags: ["Electron", "NestJS", "PostgreSQL", "React"],
-    demo: "https://oldhmrez.com/",
-    demoLabel: "Web paneli",
     detail: "/projects/oldhome-reservation.html",
   },
   {
-    title: "Old Home Guest House",
-    status: "Geliştiriliyor",
+    title: "Old Home Guest House Websitesi",
     description:
-      "Lefkoşa'daki butik otel için modern, responsive tek sayfalık web sitesi. Oda tanıtımları, galeri, imkanlar ve iletişim bölümleri. Proje hâlâ aktif olarak geliştirilmektedir.",
+      "Lefkoşa'daki butik otel için modern, responsive tek sayfalık web sitesi. Oda tanıtımları, galeri, imkanlar ve iletişim bölümleri.",
     tags: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
     demo: "https://oldhomecyprus.com/",
   },
