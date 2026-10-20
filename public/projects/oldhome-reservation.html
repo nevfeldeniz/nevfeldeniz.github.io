@@ -16,22 +16,31 @@
     .card { border: 1px solid #1e293b; background: #111827; }
     .btn-secondary { border: 1px solid #334155; color: #cbd5e1; }
     .btn-secondary:hover { border-color: #64748b; color: #f1f5f9; }
+    .shot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    @media (max-width: 540px) {
+      .shot-grid { grid-template-columns: 1fr; }
+    }
     .shot {
-      border: 1px solid #1e293b; border-radius: 8px; overflow: hidden;
+      border: 1px solid #1e293b; border-radius: 6px; overflow: hidden;
       background: #0f172a;
     }
     .shot img {
-      display: block; width: 100%; height: auto;
+      display: block; width: 100%; height: 118px;
+      object-fit: cover; object-position: top center;
     }
     .shot figcaption {
-      padding: 10px 14px; font-size: 13px; color: #94a3b8;
+      padding: 6px 10px; font-size: 11px; line-height: 1.35; color: #94a3b8;
       border-top: 1px solid #1e293b;
     }
   </style>
 </head>
 <body class="antialiased">
   <header class="border-b border-slate-800 bg-[#0c0f14]/95">
-    <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+    <nav class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
       <a href="../../index.html#projects" class="text-sm text-slate-400 hover:text-white transition inline-flex items-center gap-2">
         <i data-lucide="arrow-left" class="w-4 h-4"></i> Projeler
       </a>
@@ -39,7 +48,7 @@
     </nav>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 py-12">
+  <main class="max-w-3xl mx-auto px-6 py-12">
     <p class="section-label mb-2">Project</p>
     <h1 class="text-2xl md:text-3xl font-semibold text-white mb-3">OldHome Reservation Management System</h1>
     <p class="text-slate-400 text-[15px] leading-relaxed mb-6">
@@ -48,13 +57,13 @@
       uzaktan erişilebilen <strong class="text-slate-300 font-medium">web yönetim paneli</strong> aynı
       merkezi NestJS API ve PostgreSQL veritabanı üzerinden çalışır.
     </p>
-    <div class="flex flex-wrap gap-4 text-sm mb-10">
+    <div class="flex flex-wrap gap-4 text-sm mb-8">
       <a href="https://oldhmrez.com/" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-white transition inline-flex items-center gap-1.5">
         <i data-lucide="external-link" class="w-4 h-4"></i> Web yönetim paneli
       </a>
     </div>
 
-    <div class="flex flex-wrap gap-2 mb-10">
+    <div class="flex flex-wrap gap-2 mb-8">
       <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">Electron</span>
       <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">JavaScript</span>
       <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">NestJS</span>
@@ -62,41 +71,60 @@
       <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">React</span>
     </div>
 
+    <section class="mb-8">
+      <h2 class="text-base font-medium text-white mb-1">Web yönetim paneli</h2>
+      <p class="text-sm text-slate-500 mb-4">Tarayıcıdan erişim — giriş, dashboard ve oda durumu.</p>
+      <div class="shot-grid">
+        <figure class="shot">
+          <img src="screenshots/web-login.png" alt="Web paneli giriş ekranı" loading="lazy" />
+          <figcaption>Giriş ve güvenlik doğrulaması</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="screenshots/web-dashboard.png" alt="Web dashboard" loading="lazy" />
+          <figcaption>Dashboard — canlı oda durumu (SSE)</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="screenshots/web-odalar.png" alt="Web oda durumu" loading="lazy" />
+          <figcaption>Oda durumu — boş / dolu / bakım</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="mb-10">
-      <h2 class="text-base font-medium text-white mb-2">Windows uygulaması (EXE) — ekran görüntüleri</h2>
-      <p class="text-sm text-slate-500 mb-6">OldHome Rezervasyon masaüstü arayüzünden alınmıştır. Web paneli aynı işlevleri tarayıcıda sunar.</p>
-      <div class="grid gap-6">
+      <h2 class="text-base font-medium text-white mb-1">Windows uygulaması (EXE)</h2>
+      <p class="text-sm text-slate-500 mb-4">Masaüstü arayüzünden seçilmiş ekranlar.</p>
+      <div class="shot-grid">
         <figure class="shot">
-          <img src="screenshots/dashboard.png" alt="Ana sayfa — doluluk özeti ve oda kartları" loading="lazy" />
-          <figcaption>Ana sayfa — doluluk, günlük giriş/çıkış ve oda durumları</figcaption>
+          <img src="screenshots/dashboard.png" alt="EXE ana sayfa" loading="lazy" />
+          <figcaption>Ana sayfa</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/takvim.png" alt="Takvim — oda bazlı rezervasyon zaman çizelgesi" loading="lazy" />
-          <figcaption>Takvim — oda × gün görünümü, sürükle-bırak ile taşıma</figcaption>
+          <img src="screenshots/takvim.png" alt="EXE takvim" loading="lazy" />
+          <figcaption>Takvim</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/rezervasyonlar.png" alt="İleri tarihli rezervasyon kartları" loading="lazy" />
-          <figcaption>Rezervasyonlar — ileri tarihli kayıtlar ve ödeme durumu</figcaption>
+          <img src="screenshots/rezervasyonlar.png" alt="EXE rezervasyonlar" loading="lazy" />
+          <figcaption>Rezervasyonlar</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/odalar.png" alt="Oda listesi — dolu, boş ve bakım durumları" loading="lazy" />
-          <figcaption>Odalar — dolu / boş / bakım durumu ve hızlı rezervasyon</figcaption>
+          <img src="screenshots/odalar.png" alt="EXE odalar" loading="lazy" />
+          <figcaption>Odalar</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/muhasebe.png" alt="Muhasebe — toplam gelir ve bekleyen ödeme" loading="lazy" />
-          <figcaption>Muhasebe — tüm dönemler gelir ve bekleyen ödeme özeti</figcaption>
+          <img src="screenshots/muhasebe.png" alt="EXE muhasebe özeti" loading="lazy" />
+          <figcaption>Muhasebe özeti</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/muhasebe-aylik.png" alt="Muhasebe — seçili ay gelir özeti" loading="lazy" />
-          <figcaption>Muhasebe — ay bazlı gelir ve bekleyen ödeme kartları</figcaption>
+          <img src="screenshots/muhasebe-aylik.png" alt="EXE aylık muhasebe" loading="lazy" />
+          <figcaption>Aylık muhasebe</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/kredili-sirketler.png" alt="Kredili şirketler yönetimi" loading="lazy" />
-          <figcaption>Kredili şirketler — faturalı rezervasyonlar için merkezi liste</figcaption>
+          <img src="screenshots/kredili-sirketler.png" alt="EXE kredili şirketler" loading="lazy" />
+          <figcaption>Kredili şirketler</figcaption>
         </figure>
         <figure class="shot">
-          <img src="screenshots/raporlar.png" alt="Excel rapor oluşturma ekranı" loading="lazy" />
-          <figcaption>Raporlar — aylık, günlük oda geliri ve Excel dışa aktarma</figcaption>
+          <img src="screenshots/raporlar.png" alt="EXE raporlar" loading="lazy" />
+          <figcaption>Raporlar</figcaption>
         </figure>
       </div>
     </section>
@@ -104,29 +132,25 @@
     <section class="card rounded-lg p-6 mb-6">
       <h2 class="text-base font-medium text-white mb-4">Mimari</h2>
       <ul class="space-y-2 text-sm text-slate-300 leading-relaxed list-disc pl-5">
-        <li><strong class="text-slate-200 font-medium">Masaüstü uygulama (EXE):</strong> Electron istemci; Windows’ta kurulumlu / taşınabilir sürüm; resepsiyon ve günlük operasyonlar.</li>
-        <li><strong class="text-slate-200 font-medium">Merkezi API:</strong> NestJS REST API; oturum, rezervasyon, rapor ve yedekleme uç noktaları.</li>
-        <li><strong class="text-slate-200 font-medium">Web yönetim paneli:</strong> React tabanlı PWA; rol ve izin kontrollü sayfalar (dashboard, odalar, rezervasyonlar, raporlar).</li>
-        <li><strong class="text-slate-200 font-medium">Veritabanı:</strong> PostgreSQL (Docker ile dağıtılan merkezi veri katmanı).</li>
+        <li><strong class="text-slate-200 font-medium">Masaüstü uygulama (EXE):</strong> Electron istemci; Windows kurulum / taşınabilir sürüm.</li>
+        <li><strong class="text-slate-200 font-medium">Merkezi API:</strong> NestJS REST API; oturum, rezervasyon, rapor ve yedekleme.</li>
+        <li><strong class="text-slate-200 font-medium">Web yönetim paneli:</strong> React PWA; rol ve izin kontrollü sayfalar.</li>
+        <li><strong class="text-slate-200 font-medium">Veritabanı:</strong> PostgreSQL.</li>
       </ul>
     </section>
 
     <section class="card rounded-lg p-6 mb-6">
       <h2 class="text-base font-medium text-white mb-4">Öne çıkan özellikler</h2>
       <ul class="space-y-2 text-sm text-slate-300 leading-relaxed list-disc pl-5">
-        <li>Oda durumu, takvim ve rezervasyon oluşturma / düzenleme akışları</li>
-        <li>Ödeme durumu takibi (nakit, havale, kart); kısmi ve tam ödeme hesaplaması</li>
-        <li>Muhasebe görünümü ve kredili şirket / misafir alacak takibi</li>
-        <li>Finansal raporlar: günlük, aylık, genel özet ve Excel arşivi</li>
-        <li>Rol tabanlı yetkilendirme (admin, yönetici, resepsiyon, muhasebe) ve izin korumalı rotalar</li>
-        <li>Merkezi yedekleme ve oturum yönetimi (JWT, oturum yenileme)</li>
+        <li>Oda durumu, takvim ve rezervasyon oluşturma / düzenleme</li>
+        <li>Ödeme takibi (nakit, havale, kart); kısmi ve tam ödeme</li>
+        <li>Muhasebe ve kredili şirket / misafir alacak takibi</li>
+        <li>Finansal raporlar ve Excel dışa aktarma</li>
+        <li>Rol tabanlı yetkilendirme ve JWT oturum yönetimi</li>
       </ul>
     </section>
 
-    <p class="text-slate-500 text-sm">
-      Otel tanıtım sitesi: <a href="https://oldhomecyprus.com/" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-slate-200 underline">oldhomecyprus.com</a>
-      · Herkese açık kaynak kodu yoktur (özel / ticari proje).
-    </p>
+    <p class="text-slate-500 text-sm">Özel / ticari proje — herkese açık kaynak kodu yoktur.</p>
   </main>
 
   <script>lucide.createIcons();</script>
