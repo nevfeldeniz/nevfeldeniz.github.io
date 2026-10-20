@@ -48,14 +48,33 @@ export const skills: Record<string, string[]> = {
   "Araçlar & Veritabanları": ["Git", "PostgreSQL"],
 };
 
-export const projects = [
+export type PortfolioProject = {
+  title: string;
+  description: string;
+  tags: string[];
+  demo?: string;
+  demoLabel?: string;
+  detail?: string;
+  status?: string;
+};
+
+export const projects: PortfolioProject[] = [
+  {
+    title: "OldHome Reservation Management System",
+    description:
+      "Butik otel operasyonları için Windows masaüstü uygulaması (Electron/EXE) ve tarayıcı tabanlı yönetim paneli; ikisi de merkezi NestJS API ve PostgreSQL üzerinden çalışır. Rezervasyon, oda yönetimi, ödeme takibi, finansal raporlar ve rol tabanlı yetkilendirme.",
+    tags: ["Electron", "NestJS", "PostgreSQL", "React"],
+    demo: "https://oldhmrez.com/",
+    demoLabel: "Web paneli",
+    detail: "/projects/oldhome-reservation.html",
+  },
   {
     title: "Old Home Guest House",
     status: "Geliştiriliyor",
     description:
       "Lefkoşa'daki butik otel için modern, responsive tek sayfalık web sitesi. Oda tanıtımları, galeri, imkanlar ve iletişim bölümleri. Proje hâlâ aktif olarak geliştirilmektedir.",
     tags: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    demo: "https://nevfeldeniz.github.io/Oldhome/",
+    demo: "https://oldhomecyprus.com/",
   },
   {
     title: "Kişisel Portföy Sitesi",

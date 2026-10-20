@@ -213,11 +213,19 @@
 
     const projects = [
       {
+        title: "OldHome Reservation Management System",
+        description: "Butik otel operasyonları için Windows masaüstü uygulaması (Electron/EXE) ve tarayıcı tabanlı yönetim paneli; ikisi de merkezi NestJS API ve PostgreSQL üzerinden çalışır. Rezervasyon, oda yönetimi, ödeme takibi, finansal raporlar ve rol tabanlı yetkilendirme.",
+        tags: ["Electron", "NestJS", "PostgreSQL", "React"],
+        demo: "https://oldhmrez.com/",
+        demoLabel: "Web paneli",
+        detail: "public/projects/oldhome-reservation.html",
+      },
+      {
         title: "Old Home Guest House",
         status: "Geliştiriliyor",
         description: "Lefkoşa'daki butik otel için modern, responsive tek sayfalık web sitesi. Oda tanıtımları, galeri, imkanlar ve iletişim bölümleri. Proje hâlâ aktif olarak geliştirilmektedir.",
         tags: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-        demo: "https://nevfeldeniz.github.io/Oldhome/",
+        demo: "https://oldhomecyprus.com/",
       },
       {
         title: "Kişisel Portföy Sitesi",
@@ -265,9 +273,8 @@
           ${p.tags.map(t => `<span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">${t}</span>`).join("")}
         </div>
         <div class="flex flex-wrap gap-3 text-sm">
-          <a href="${p.demo}" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-white transition inline-flex items-center gap-1">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Canlı Site
-          </a>
+          ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-white transition inline-flex items-center gap-1"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> ${p.demoLabel || "Canlı Site"}</a>` : ""}
+          ${p.detail ? `<a href="${p.detail}" class="text-slate-400 hover:text-slate-200 transition inline-flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> Detay</a>` : ""}
         </div>`;
       pg.appendChild(el);
     });

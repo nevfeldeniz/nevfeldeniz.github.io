@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FileText } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
@@ -39,16 +39,27 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <div className="flex gap-4 text-sm">
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-zinc-300 hover:text-white transition"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Canlı Site
-              </a>
+            <div className="flex flex-wrap gap-4 text-sm">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-zinc-300 hover:text-white transition"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  {project.demoLabel || "Canlı Site"}
+                </a>
+              )}
+              {project.detail && (
+                <a
+                  href={project.detail}
+                  className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 transition"
+                >
+                  <FileText className="w-4 h-4" />
+                  Detay
+                </a>
+              )}
             </div>
           </motion.article>
         ))}
