@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline:
     "Temiz kod yazmaya, ölçeklenebilir sistemler tasarlamaya ve problemi çözmeye tutkulu bir geliştiriciyim.",
   about:
-    "Yakın Doğu Üniversitesi'nde yazılım mühendisliği (İngilizce) bölümünde 2. sınıf öğrencisiyim. Backend, frontend ve full stack geliştirme alanlarına ilgi duyuyorum. Problemleri analiz ederek net, okunabilir ve sürdürülebilir çözümler üretmeyi hedefliyorum. Yapay zeka destekli geliştirme araçlarını bilinçli ve ölçülü biçimde kullanıyor; etkin prompt yazımıyla verimliliğimi artırırken ürettiğim çıktının doğruluğunu ve kalitesini her zaman kontrol ediyorum.",
+    "Yakın Doğu Üniversitesi'nde yazılım mühendisliği (İngilizce) bölümünde 3. sınıf öğrencisiyim (1 yıl hazırlık). Backend, frontend ve full stack geliştirme alanlarına ilgi duyuyorum. Problemleri analiz ederek net, okunabilir ve sürdürülebilir çözümler üretmeyi hedefliyorum. Yapay zeka destekli geliştirme araçlarını bilinçli ve ölçülü biçimde kullanıyor; etkin prompt yazımıyla verimliliğimi artırırken ürettiğim çıktının doğruluğunu ve kalitesini her zaman kontrol ediyorum.",
   email: "nevfeldenizz@gmail.com",
   schoolEmail: "20231125@std.neu.edu.tr",
   phone: "05488793011",
@@ -18,7 +18,7 @@ export const timeline = [
   {
     year: "2023 — 2024",
     title: "Hazırlık",
-    description: "Yakın Doğu Üniversitesi Yazılım Mühendisliği (İngilizce) hazırlık sınıfı.",
+    description: "1 yıllık İngilizce hazırlık programı — Yakın Doğu Üniversitesi Yazılım Mühendisliği (İngilizce).",
   },
   {
     year: "2024 — 2025",
@@ -28,7 +28,7 @@ export const timeline = [
   {
     year: "2025 — 2026",
     title: "2. Sınıf",
-    description: "Yazılım mühendisliği eğitimime 2. sınıfta devam ediyorum.",
+    description: "İkinci sınıf dersleri ve bölüm müfredatı.",
   },
   {
     year: "2025 — 2026",
@@ -39,6 +39,11 @@ export const timeline = [
     year: "2025 — 2026",
     title: "JavaScript",
     description: "Web geliştirme temelleri ve frontend çalışmalarına giriş.",
+  },
+  {
+    year: "2026 — 2027",
+    title: "3. Sınıf",
+    description: "Yazılım mühendisliği eğitimime 3. sınıfta devam ediyorum.",
   },
 ];
 
