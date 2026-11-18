@@ -11,7 +11,7 @@ export const personalInfo = {
   phoneTel: "+905488793011",
   github: "https://github.com/nevfeldeniz",
   linkedin: "https://www.linkedin.com/in/nevfel-deniz-s%C3%BCrmeli-9383601b9/",
-  cvUrl: "/cv.html",
+  cvUrl: "/cv.html?v=6",
 };
 
 export const timeline = [
